@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:        Archishman Guha
+// 
+// Create Date:    21:38:00 07/23/2020 
+// Design Name: 
+// Module Name:    LED 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module LED(clk,LED
+    );
+	input clk;
+	output [7:0] LED;
+	reg [7:0]LD=0;
+	reg [25:0]counter=0;
+	wire t;
+	assign t=counter[25];
+
+	always@(posedge clk)
+		counter <= counter+'d1;
+		
+	always@(posedge t)
+	begin
+		LD<=LD+'d1;
+	end
+	assign LED=LD;
+		
+
+endmodule
